@@ -24,6 +24,7 @@ def main():
     # Upload Expense file to Google Sheets
     csv_to_sheets(expense_file_path)
 
+
 def get_user_expense():
     print("Getting user expense")
     expense_name = input("Enter expense name:")
@@ -56,12 +57,10 @@ def get_user_expense():
             print("Invalid input, please try again!")
 
         
-
 def save_expense_to_file(expense: Expense, expense_file_path):
     print(f"Saving user expense: {expense} to {expense_file_path}")
     with open(expense_file_path, "a", encoding="utf-8") as f:
         f.write(f"{expense.name}, {expense.amount}, {expense.category}\n")
-
 
 
 def summarize_expense(expense_file_path, budget):
